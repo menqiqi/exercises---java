@@ -1,59 +1,46 @@
-package www.bit.java;
+package www.like.java;
 
-import java.util.Scanner;
+import java.lang.reflect.Method;
 
-interface Compute{
-    int computer(int n, int m);
-}
+class Person{
+    private String name;
+    private int age;
 
-class Add implements Compute{
-    public int computer(int n, int m){
-        return n+m;
+    public String getName() {
+        return name;
     }
-}
 
-class Sub implements Compute{
-    public int computer(int n, int m){
-        return n-m;
+    public void setName(String name) {
+        this.name = name;
     }
-}
 
-class Mul implements Compute{
-    public int computer(int n, int m){
-        return n*m;
+    public int getAge() {
+        return age;
     }
-}
 
-class Div implements Compute{
-    public int computer(int n, int m){
-        return n/m;
+    public void setAge(int age) {
+        this.age = age;
     }
-}
 
-class UseCompute{
-    public void useCom(Compute com, int one, int two){
-        System.out.println(com.computer(one,two));
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
 
 public class Test {
-    public static void main(String[] args) {
-       UseCompute uc = new UseCompute();
-       Add a = new Add();
-       Sub b = new Sub();
-       Mul c = new Mul();
-       Div d = new Div();
-       System.out.println("请输入数据：");
-       Scanner scanner = new Scanner(System.in);
-       int i = scanner.nextInt();
-       int j = scanner.nextInt();
-       System.out.print("和：");
-       uc.useCom(a,i,j);
-       System.out.print("差：");
-       uc.useCom(b,i,j);
-       System.out.print("积：");
-       uc.useCom(c,i,j);
-       System.out.print("商：");
-       uc.useCom(d,i,j);
+    public static void main(String[] args) throws Exception {
+        //1.拿到Person的Class对象
+        Class<?> cls = Person.class;
+        //2.创建Person的实例化对象
+        Person per = (Person)cls.newInstance();
+        //3.拿到setName的Method对象
+        Method setMethod = cls.getMethod("setName", String.class);
+        //4.通过invoke进行调用
+        setMethod.invoke(per,"张三");
+        System.out.println(per);
     }
 }
