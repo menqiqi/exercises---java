@@ -126,7 +126,13 @@ public class QuickSort {
     }
 
 
-
+    /**
+     * 前后指针法
+     * @param arr
+     * @param left
+     * @param right
+     * @return
+     */
     private int partion3(int[] arr, int left, int right){
         int prev = left-1;
         int cur = left;
