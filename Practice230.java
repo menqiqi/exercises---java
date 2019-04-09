@@ -6,6 +6,7 @@ import java.util.Scanner;
  * 给定一句英语，要求你编写程序，将句中所有的单词颠倒输出。
  */
 
+/*
 public class Practice230 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -28,3 +29,4 @@ public class Practice230 {
 
 
 }
+*/
