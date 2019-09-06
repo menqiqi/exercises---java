@@ -5,6 +5,7 @@
  * NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
  */
 
+/*
 import java.util.ArrayList;
 public class Practice371 {
     public static void main(String[] args) {
@@ -27,4 +28,4 @@ public class Practice371 {
         }
         return array[left];
     }
-}
+}*/
